@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', () => {
+    getLocationWeather();
+});
+
 document.getElementById('get-weather').addEventListener('click', getWeather);
 document.getElementById('get-location').addEventListener('click', getLocationWeather);
 document.getElementById('convert-temp').addEventListener('click', convertTemperature);
