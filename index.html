@@ -1,1 +1,34 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="animate-header">Weather App</h1>
+    </header>
+    <main>
+        <section id="input-section">
+            <label for="zipcode">Enter Zip Code:</label>
+            <input type="text" id="zipcode" name="zipcode">
+            <label for="city">Enter City:</label>
+            <input type="text" id="city" name="city">
+            <label for="state">Enter State:</label>
+            <input type="text" id="state" name="state">
+            <button id="get-weather">Get Weather</button>
+            <button id="get-location">Use Current Location</button>
+        </section>
+        <section id="weather-display">
+            <!-- Weather data will be displayed here -->
+        </section>
+        <section id="forecast-display">
+            <!-- 3-hour forecast data will be displayed here -->
+        </section>
+        <button id="convert-temp">Convert to Celsius</button>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

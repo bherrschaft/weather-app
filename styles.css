@@ -1,1 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s ease; /* Smooth background color transition */
+}
 
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s; /* Header animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-header {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#input-section {
+    margin-bottom: 20px;
+}
+
+#input-section label {
+    margin-right: 10px;
+}
+
+#input-section input {
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#weather-display, #forecast-display {
+    margin-top: 20px;
+}
+
+#weather-display h2, #forecast-display h2 {
+    margin: 0 0 10px 0;
+}
+
+#weather-display p, #forecast-display p {
+    margin: 5px 0;
+}
+
+.forecast-hour {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    animation: slideIn 0.5s ease; /* Forecast animation */
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+#convert-temp {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Button animation */
+}
+
+#convert-temp:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+}
