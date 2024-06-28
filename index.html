@@ -4,31 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1 class="animate-header">Weather App</h1>
-    </header>
-    <main>
-        <section id="input-section">
-            <label for="zipcode">Enter Zip Code:</label>
-            <input type="text" id="zipcode" name="zipcode">
-            <label for="city">Enter City:</label>
-            <input type="text" id="city" name="city">
-            <label for="state">Enter State:</label>
-            <input type="text" id="state" name="state">
-            <button id="get-weather">Get Weather</button>
-            <button id="get-location">Use Current Location</button>
-        </section>
-        <section id="weather-display">
-            <!-- Weather data will be displayed here -->
-        </section>
-        <section id="forecast-display">
-            <!-- 3-hour forecast data will be displayed here -->
-        </section>
-        <button id="convert-temp">Convert to Celsius</button>
-    </main>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1 class="animate-header">Weather App</h1>
+        </header>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div id="weather-carousel" class="carousel slide" data-interval="false" data-keyboard="false" data-touch="false">
+                    <div class="carousel-inner" id="carousel-content">
+                        <div class="carousel-item active" id="weather-display">
+                            <!-- Current weather data will be displayed here -->
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#weather-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#weather-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="input-section my-4">
+                    <div class="form-group">
+                        <label for="zipcode">Enter Zip Code:</label>
+                        <input type="text" class="form-control" id="zipcode" name="zipcode">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Enter City:</label>
+                        <input type="text" class="form-control" id="city" name="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">Enter State:</label>
+                        <input type="text" class="form-control" id="state" name="state">
+                    </div>
+                    <button class="btn btn-primary btn-block" id="get-weather">Get Weather</button>
+                    <button class="btn btn-secondary btn-block" id="get-location">Use Current Location</button>
+                    <button class="btn btn-info btn-block mt-3" id="convert-temp">Convert to Celsius</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
