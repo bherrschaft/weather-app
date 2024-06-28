@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('get-weather').addEventListener('click', getWeather);
 document.getElementById('get-location').addEventListener('click', getLocationWeather);
 document.getElementById('convert-temp').addEventListener('click', convertTemperature);
+document.getElementById('revert-weather').addEventListener('click', revertToCurrentWeather);
 document.querySelector('.carousel-control-prev').addEventListener('click', (event) => {
     event.stopPropagation();
     $('#weather-carousel').carousel('prev');
@@ -26,6 +27,7 @@ document.getElementById('weather-carousel').addEventListener('click', (event) =>
 let currentTempInFahrenheit = true;
 let forecastDataCache = [];
 let currentDayIndex = 0;
+let initialWeatherData, initialForecastData;
 
 async function getWeather() {
     const zipCode = document.getElementById('zipcode').value;
@@ -70,6 +72,9 @@ async function getLocationWeather() {
 
             const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`);
             forecastDataCache = await forecastResponse.json();
+
+            initialWeatherData = weatherData;
+            initialForecastData = forecastDataCache;
             
             displayWeather(weatherData, "Your Location");
             displayForecast(forecastDataCache.list, "Your Location");
@@ -222,3 +227,9 @@ function changeBackgroundColor(condition) {
     }
 }
 
+function revertToCurrentWeather() {
+    if (initialWeatherData && initialForecastData) {
+        displayWeather(initialWeatherData, "Your Location");
+        displayForecast(initialForecastData.list, "Your Location");
+    }
+}
