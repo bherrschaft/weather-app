@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "target": "es2017",
+    "module": "es6",  // Add or ensure this line is present
     "strict": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "include": ["src"]
 }
